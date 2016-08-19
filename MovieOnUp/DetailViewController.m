@@ -114,7 +114,7 @@
         NSString *baseUrl = [[configMO valueForKey:@"images_base_url"] description];
         NSString *urlStr = [NSString stringWithFormat:@"%@%@%@", baseUrl, posterSize, posterPath];
         
-        [self.poster sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:nil options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        [self.poster sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:[UIImage imageNamed:@"poster_placeholder_1"] options:0 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             
             [self.posterActivityIndicator stopAnimating];
             //[self.tableView setNeedsDisplay];

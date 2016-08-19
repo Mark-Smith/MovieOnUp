@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -35,18 +36,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-tA-eDK" userLabel="Overview Default Placeholder">
-                                <rect key="frame" x="30" y="444" width="540" height="145.5"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-tA-eDK" userLabel="Overview Default Placeholder">
+                                <rect key="frame" x="30" y="384" width="540" height="206"/>
                                 <color key="backgroundColor" white="0.84982322079999995" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-xq-fbK" userLabel="Overview Container">
-                                <rect key="frame" x="30" y="444" width="540" height="145.5"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ce5-xq-fbK" userLabel="Overview Container">
+                                <rect key="frame" x="30" y="384" width="540" height="206"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="7pe-Bq-sFR" userLabel="Overview Activity Indicator">
-                                        <rect key="frame" x="260" y="63.5" width="20" height="20"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="7pe-Bq-sFR" userLabel="Overview Activity Indicator">
+                                        <rect key="frame" x="260" y="93" width="20" height="20"/>
                                     </activityIndicatorView>
-                                    <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA1-e8-8X6" userLabel="The Overview">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="145.5"/>
+                                    <textView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA1-e8-8X6" userLabel="The Overview">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="206"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -62,33 +63,33 @@
                                     <constraint firstItem="LA1-e8-8X6" firstAttribute="leading" secondItem="Ce5-xq-fbK" secondAttribute="leading" priority="750" id="xx3-14-jdi"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV1-hE-8Ax">
-                                <rect key="frame" x="279" y="74" width="291" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ZV1-hE-8Ax">
+                                <rect key="frame" x="239" y="74" width="331" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" white="0.49940123180000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ln-pd-dKF" userLabel="The Popularity">
-                                <rect key="frame" x="279" y="89" width="291" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="3Ln-pd-dKF" userLabel="The Popularity">
+                                <rect key="frame" x="570" y="89" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlM-P5-oiY">
-                                <rect key="frame" x="279" y="79" width="291" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlM-P5-oiY">
+                                <rect key="frame" x="220" y="79" width="350" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.49940123180000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nia-Wp-hli" userLabel="ThumnailContainer">
-                                <rect key="frame" x="30" y="74" width="239" height="360"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nia-Wp-hli" userLabel="ThumnailContainer">
+                                <rect key="frame" x="30" y="74" width="199" height="300"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-dJ-b2R" userLabel="Poster">
-                                        <rect key="frame" x="0.0" y="0.0" width="239" height="360"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="poster_placeholder_1" translatesAutoresizingMaskIntoConstraints="NO" id="hkk-dJ-b2R" userLabel="Poster">
+                                        <rect key="frame" x="-199" y="-298" width="596" height="896"/>
                                         <color key="backgroundColor" white="0.84982322079999995" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9rO-On-1EJ" userLabel="Poster Activity Indicator">
-                                        <rect key="frame" x="109" y="170.5" width="20" height="20"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9rO-On-1EJ" userLabel="Poster Activity Indicator">
+                                        <rect key="frame" x="89" y="140" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <constraints>
@@ -104,23 +105,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tlM-P5-oiY" firstAttribute="leading" secondItem="nia-Wp-hli" secondAttribute="trailing" priority="750" constant="10" id="0rw-9J-wxo"/>
-                            <constraint firstItem="ZV1-hE-8Ax" firstAttribute="leading" secondItem="nia-Wp-hli" secondAttribute="trailing" priority="750" constant="10" id="3pg-ZR-8gC"/>
+                            <constraint firstItem="tlM-P5-oiY" firstAttribute="width" relation="greaterThanOrEqual" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" priority="750" id="05j-0V-ENf"/>
+                            <constraint firstItem="tlM-P5-oiY" firstAttribute="leading" secondItem="nia-Wp-hli" secondAttribute="trailing" constant="10" id="0rw-9J-wxo"/>
+                            <constraint firstItem="ZV1-hE-8Ax" firstAttribute="leading" secondItem="nia-Wp-hli" secondAttribute="trailing" constant="10" id="3pg-ZR-8gC"/>
                             <constraint firstItem="ZV1-hE-8Ax" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" priority="750" constant="10" id="7sB-tn-Nj9"/>
                             <constraint firstItem="Ce5-xq-fbK" firstAttribute="top" secondItem="nia-Wp-hli" secondAttribute="bottom" priority="750" constant="10" id="8wY-yQ-dou"/>
                             <constraint firstItem="3Ln-pd-dKF" firstAttribute="top" secondItem="tlM-P5-oiY" secondAttribute="bottom" priority="750" constant="10" id="BKb-5D-5vB"/>
                             <constraint firstItem="nia-Wp-hli" firstAttribute="height" relation="lessThanOrEqual" secondItem="svH-Pt-448" secondAttribute="height" multiplier="0.6" id="HxP-H5-8lc"/>
-                            <constraint firstItem="3Ln-pd-dKF" firstAttribute="leading" secondItem="nia-Wp-hli" secondAttribute="trailing" priority="750" constant="10" id="MyY-rK-zTw"/>
+                            <constraint firstItem="3Ln-pd-dKF" firstAttribute="leading" secondItem="nia-Wp-hli" secondAttribute="trailing" constant="10" id="MyY-rK-zTw"/>
+                            <constraint firstItem="3Ln-pd-dKF" firstAttribute="width" relation="greaterThanOrEqual" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" priority="750" id="Ne7-5c-MoX"/>
                             <constraint firstItem="tlM-P5-oiY" firstAttribute="top" secondItem="ZV1-hE-8Ax" secondAttribute="bottom" priority="750" constant="5" id="OcF-DX-NDW"/>
                             <constraint firstItem="nia-Wp-hli" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="10" id="SNI-K0-t7f"/>
                             <constraint firstItem="xF5-tA-eDK" firstAttribute="top" secondItem="Ce5-xq-fbK" secondAttribute="top" priority="750" id="TS6-ZY-Ta6"/>
                             <constraint firstItem="Ce5-xq-fbK" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" priority="750" constant="10" id="TrM-oB-wgM"/>
+                            <constraint firstItem="ZV1-hE-8Ax" firstAttribute="width" relation="greaterThanOrEqual" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" priority="750" id="Wwd-ca-EKn"/>
                             <constraint firstItem="nia-Wp-hli" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" priority="750" constant="10" id="XVf-ny-Ek3"/>
                             <constraint firstItem="xF5-tA-eDK" firstAttribute="bottom" secondItem="Ce5-xq-fbK" secondAttribute="bottom" priority="750" id="XtJ-pS-A2n"/>
-                            <constraint firstItem="nia-Wp-hli" firstAttribute="width" relation="lessThanOrEqual" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.4" id="bOi-5x-U0M"/>
+                            <constraint firstItem="nia-Wp-hli" firstAttribute="width" relation="lessThanOrEqual" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="bOi-5x-U0M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tlM-P5-oiY" secondAttribute="trailing" priority="750" constant="10" id="eZI-WY-TMw"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="Ce5-xq-fbK" secondAttribute="bottom" priority="750" constant="10" id="gnB-Ky-ixL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZV1-hE-8Ax" secondAttribute="trailing" priority="750" constant="10" id="iw6-7Y-Ogk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZV1-hE-8Ax" secondAttribute="trailing" constant="10" id="iw6-7Y-Ogk"/>
                             <constraint firstItem="xF5-tA-eDK" firstAttribute="trailing" secondItem="Ce5-xq-fbK" secondAttribute="trailing" priority="750" id="kD0-Xg-Hqk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Ln-pd-dKF" secondAttribute="trailing" priority="750" constant="10" id="lZ7-Re-VcS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ce5-xq-fbK" secondAttribute="trailing" priority="750" constant="10" id="qRe-Ir-Jv6"/>
@@ -351,6 +355,7 @@
     </scenes>
     <resources>
         <image name="IMDb_logo" width="150" height="150"/>
+        <image name="poster_placeholder_1" width="596" height="896"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
