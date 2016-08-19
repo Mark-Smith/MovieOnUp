@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="BackdropSize" representedClassName="BackdropSize" syncable="YES">
+        <attribute name="backdrop_size" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Configuration" representedClassName="Configuration" syncable="YES">
+        <attribute name="images_backdrop_sizes" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="images_base_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="images_poster_sizes" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
     <entity name="Genre" representedClassName="Genre" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="MovieDetail" representedClassName="MovieDetail" syncable="YES">
         <attribute name="backdrop_path" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="genre_ids" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="genres" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="popularity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="poster_path" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,15 +25,17 @@
     <entity name="MovieSummary" representedClassName="MovieSummary" syncable="YES">
         <attribute name="backdrop_path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genre_ids" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="popularity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="poster_path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="release_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MovieSummary" positionX="261" positionY="198" width="128" height="150"/>
-        <element name="MovieDetail" positionX="270" positionY="252" width="128" height="165"/>
+        <element name="BackdropSize" positionX="315" positionY="324" width="128" height="60"/>
+        <element name="Configuration" positionX="279" positionY="288" width="128" height="90"/>
         <element name="Genre" positionX="288" positionY="306" width="128" height="75"/>
+        <element name="MovieDetail" positionX="270" positionY="252" width="128" height="165"/>
+        <element name="MovieSummary" positionX="261" positionY="198" width="128" height="150"/>
     </elements>
 </model>

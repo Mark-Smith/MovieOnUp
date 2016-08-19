@@ -10,4 +10,7 @@
 
 @interface UIView (ToastExtras)
 
+// see https://github.com/scalessec/Toast/issues/36
+- (void)makeToast:(NSString*)message;
+
 @end

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class MOUIntroViewController;
+
+@protocol MOUIntroViewControllerDelegate <NSObject>
+
+- (void)introViewControllerDidFinish:(MOUIntroViewController*)introViewController;
+
+@end
+
 @interface MOUIntroViewController : UIViewController
+
+@property (nonatomic, weak) id<MOUIntroViewControllerDelegate> delegate;
 
 @end

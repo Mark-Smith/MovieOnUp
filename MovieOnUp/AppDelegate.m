@@ -7,10 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "MOUIntroViewController.h"
 #import "MasterViewController.h"
+#import "DetailViewController.h"
+#import <CoreData/CoreData.h>
+#import "MOURESTManager.h"
 
-@interface AppDelegate () <UISplitViewControllerDelegate>
+
+@interface AppDelegate () <MOUIntroViewControllerDelegate, UISplitViewControllerDelegate>
 
 @end
 
@@ -19,14 +23,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    splitViewController.delegate = self;
-
-    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-    MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    
+    MOURESTManager *RESTManager = [MOURESTManager sharedInstance];
+    [RESTManager config];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MOUIntroViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MOUIntroViewController"];
+    vc.delegate = self;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -54,7 +61,7 @@
     [self saveContext];
 }
 
-#pragma mark - Split view
+/*#pragma mark - Split view
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
     if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
@@ -63,7 +70,7 @@
     } else {
         return NO;
     }
-}
+}*/
 
 #pragma mark - Core Data stack
 
@@ -142,6 +149,47 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
+    }
+}
+
+
+#pragma mark - MOUIntroViewControllerDelegate
+
+- (void)introViewControllerDidFinish:(MOUIntroViewController *)introViewController {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UISplitViewController *splitViewController = [storyboard instantiateViewControllerWithIdentifier:@"UISplitViewController"];
+    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+    splitViewController.delegate = self;
+    //splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModePrimaryOverlay;
+    [splitViewController setPreferredDisplayMode:UISplitViewControllerDisplayModeAllVisible];
+    
+    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
+    MasterViewController *masterViewController = (MasterViewController *)masterNavigationController.topViewController;
+    masterViewController.managedObjectContext = self.managedObjectContext;
+    self.window.rootViewController = splitViewController;
+    [self.window makeKeyAndVisible];
+}
+
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController
+collapseSecondaryViewController:(UIViewController *)secondaryViewController
+  ontoPrimaryViewController:(UIViewController *)primaryViewController {
+    
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]]
+        && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]]
+        && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] movieSummaryMO] == nil)) {
+        
+        // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+        return YES;
+        
+    } else {
+        
+        return NO;
+        
     }
 }
 

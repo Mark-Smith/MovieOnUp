@@ -8,6 +8,7 @@
 
 #import "MOUIntroViewController.h"
 
+
 @interface MOUIntroViewController ()
 
 @end
@@ -23,6 +24,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)goButtonTapped:(id)sender {
+    [self.delegate introViewControllerDidFinish:self];
+}
+
 
 /*
 #pragma mark - Navigation
